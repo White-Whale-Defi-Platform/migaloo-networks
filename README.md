@@ -1,1 +1,3 @@
 # migaloo-networks
+
+[Mainnet](mainnet)
