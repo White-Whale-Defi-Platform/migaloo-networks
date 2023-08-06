@@ -1,4 +1,11 @@
-# migaloo-networks
+<div>
+    <img src="https://github.com/cosmos/chain-registry/blob/master/migaloo/images/migaloo-light.svg" align="left" width="110" style="margin-right: 15px"/>
+    <h1>   
+        Migaloo Networks
+    </h1>
+    <p> This repository contains information on Migaloo mainnet and testnets </p>
+    <br>
+</div>
 
 | Chain ID                 | Type      | Status         | Version      | Notes                                 |
 | ------------------------ | --------- | -------------- | ------------ | ------------------------------------- |
