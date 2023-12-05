@@ -10,7 +10,7 @@ DECIMALS = "000000"
 MILLION = 1000000
 SECONDS_PER_DAY = 24 * 60 * 60
 
-NUM_GENESIS_VALIDATORS = 5
+NUM_GENESIS_VALIDATORS = 8
 INITIAL_GENESIS_ALLOCATION = 10
 INITIAL_AMOUNT = NUM_GENESIS_VALIDATORS * INITIAL_GENESIS_ALLOCATION
 
@@ -24,11 +24,11 @@ MULTI_SIG_AMOUNT = 380.3848 * MILLION - INITIAL_AMOUNT
 
 
 # see: https://www.epochconverter.com for more infos on the unix time stamp
-GENESIS_TIME_UNIX = 1676300400
-THREE_MONTH_UNIX = 1683990000
-TWELVE_MONTH_UNIX = 1707836400
-TWENTY_FOUR_MONTH_UNIX = 1739458800
-THIRTY_SIX_MONTH_UNIX = 1770994800
+GENESIS_TIME_UNIX = 1703253600
+THREE_MONTH_UNIX = 1774184400
+TWELVE_MONTH_UNIX = 1734876000
+TWENTY_FOUR_MONTH_UNIX = 1766412000
+THIRTY_SIX_MONTH_UNIX = 1797948000
 
 # List of all accounts that get continously vested tokens.
 # Address: Address of the account.
@@ -101,30 +101,43 @@ VESTING_ACCOUNTS = [
         "amount": 1 * MILLION,
         "duration": TWENTY_FOUR_MONTH_UNIX,
     },
-    #TODO: switch these out!
-    # Genesis Validators
-    {
-        "address": "migaloo1alga5e8vr6ccr9yrg0kgxevpt5xgmgrvqgujs6",
-        "amount": 22.1652 * MILLION,
-        "duration": THIRTY_SIX_MONTH_UNIX,
+    { #ww hot wallet
+        "address": "migaloo1fpfg0max7kvpn40y3245qnpg7a5lefsd7ktemg",
+        "amount": 20 * MILLION,
+        "duration": TWENTY_FOUR_MONTH_UNIX,
     },
-    {
-        "address": "migaloo1fc4kjfau480nr503yl0r8ml7vvn07d2r7ztjky",
+    { #dankuzone
+        "address": "migaloo1h8pgcp78hf20qmrpkykns70j8s0pvty0ve25ls",
         "amount": 3 * MILLION,
         "duration": THIRTY_SIX_MONTH_UNIX,
     },
-    {
-        "address": "migaloo17gcjmzpz2sfjj9waa6f2e8pr7s70v3hcudtsqj",
+    { #polkachu
+        "address": "migaloo1jt9w26mpxxjsk63mvd4m2ynj0af09cslw4huul",
         "amount": 3 * MILLION,
         "duration": THIRTY_SIX_MONTH_UNIX,
     },
-    {
-        "address": "migaloo14kqr9fjjzl24gwfndf05wkelncm76ynkk04zjk",
+    { #nftswitch
+        "address": "migaloo18mf4c20fw6903k0uyt5q2gtxtxaces8wveupfy",
+        "amount": 3 * MILLION,
+        "duration": THIRTY_SIX_MONTH_UNIX,
+    },
+    { #PFC
+        "address": "migaloo1wpayju4jcn2mhv6yewclf6rcq9fyqzvavppjal",
         "amount": 4 * MILLION,
         "duration": THIRTY_SIX_MONTH_UNIX,
     },
-    {
-        "address": "migaloo1zz9ppl2wy4ruzzv8mmnx6cente9ygvcx2r3qap",
+    { #synergy
+        "address": "migaloo1xzern65ppact6sgh4htllnr8pg9dpnc8wrsq7h",
+        "amount": 3 * MILLION,
+        "duration": THIRTY_SIX_MONTH_UNIX,
+    },
+    { #autostake
+        "address": "migaloo13qf8zqs95rvn2aqrpct4zvr6rsjl3xqqwrs44q",
+        "amount": 3 * MILLION,
+        "duration": THIRTY_SIX_MONTH_UNIX,
+    },
+    { #Kalia network
+        "address": "migaloo14as7p2qkccvgq3q3nntzsjkdnpq03kk0nz3lfd",
         "amount": 3 * MILLION,
         "duration": THIRTY_SIX_MONTH_UNIX,
     },
@@ -160,7 +173,7 @@ if __name__ == "__main__":
         genesis = json.load(FILE)
 
     # Modify genesis parameters
-    genesis["genesis_time"] = "2023-08-11T9:00:00.000000Z"
+    genesis["genesis_time"] = "2023-12-22T9:00:00.000000Z"
     genesis["chain_id"] = "narwhal-2"
     genesis["app_state"]["auth"]["params"]["max_memo_characters"] = "512"
     genesis["app_state"]["crisis"]["constant_fee"]["denom"] = DENOM
