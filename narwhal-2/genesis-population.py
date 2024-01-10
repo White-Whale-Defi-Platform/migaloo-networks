@@ -141,6 +141,11 @@ VESTING_ACCOUNTS = [
         "amount": 3 * MILLION,
         "duration": THIRTY_SIX_MONTH_UNIX,
     },
+    { #kjnodes 
+        "address": "migaloo167k6kvu7rfeju9amdg654uqekhcrxf4pnyaqva",
+        "amount": 3 * MILLION,
+        "duration": THIRTY_SIX_MONTH_UNIX,
+    },
 ]
 
 
