@@ -24,11 +24,11 @@ MULTI_SIG_AMOUNT = 380.3848 * MILLION - INITIAL_AMOUNT
 
 
 # see: https://www.epochconverter.com for more infos on the unix time stamp
-GENESIS_TIME_UNIX = 1703253600
-THREE_MONTH_UNIX = 1774184400
-TWELVE_MONTH_UNIX = 1734876000
-TWENTY_FOUR_MONTH_UNIX = 1766412000
-THIRTY_SIX_MONTH_UNIX = 1797948000
+GENESIS_TIME_UNIX = 1704897600
+THREE_MONTH_UNIX = 1712756400
+TWELVE_MONTH_UNIX = 1736520000
+TWENTY_FOUR_MONTH_UNIX = 1768056000
+THIRTY_SIX_MONTH_UNIX = 1799592000
 
 # List of all accounts that get continously vested tokens.
 # Address: Address of the account.
@@ -141,7 +141,7 @@ VESTING_ACCOUNTS = [
         "amount": 3 * MILLION,
         "duration": THIRTY_SIX_MONTH_UNIX,
     },
-    { #kjnodes 
+    { #kjnodes
         "address": "migaloo167k6kvu7rfeju9amdg654uqekhcrxf4pnyaqva",
         "amount": 3 * MILLION,
         "duration": THIRTY_SIX_MONTH_UNIX,
@@ -178,7 +178,7 @@ if __name__ == "__main__":
         genesis = json.load(FILE)
 
     # Modify genesis parameters
-    genesis["genesis_time"] = "2023-12-22T9:00:00.000000Z"
+    genesis["genesis_time"] = "2024-01-10T14:40:00.000000Z"
     genesis["chain_id"] = "narwhal-2"
     genesis["app_state"]["auth"]["params"]["max_memo_characters"] = "512"
     genesis["app_state"]["crisis"]["constant_fee"]["denom"] = DENOM

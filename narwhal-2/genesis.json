@@ -1,5 +1,5 @@
 {
-  "genesis_time": "2023-12-22T10:00:00.022252Z",
+  "genesis_time": "2024-01-10T14:40:00.000000Z",
   "chain_id": "narwhal-2",
   "initial_height": "1",
   "consensus_params": {
@@ -52,12 +52,7 @@
         "default_send_enabled": true
       },
       "balances": [],
-      "supply": [
-        {
-          "denom": "uwhale",
-          "amount": "478750080000000"
-        }
-      ],
+      "supply": [],
       "denom_metadata": []
     },
     "capability": {
