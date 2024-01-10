@@ -1,6 +1,6 @@
 # Migaloo Testnet
 
-This testnet will start with the node version `3.0.2`.
+This testnet will start with the node version `3.0.4`.
 
 ## Minimum hardware requirements
 
@@ -15,17 +15,17 @@ This testnet will start with the node version `3.0.2`.
 ```bash
 git clone https://github.com/White-Whale-Defi-Platform/migaloo-chain
 cd migaloo-chain
-git checkout v3.0.2
+git checkout v3.0.4
 make install
 ```
 
 ### Check Node version
 
 ```bash
-# Get node version (should be v3.0.2)
+# Get node version (should be v3.0.4)
 migalood version
 
-# Get node long version (should be de98de2dd96917ae1ab79161d573fc0b4ee1facf)
+# Get node long version (should be 6e3cc31edaa790176fe94792880f2ec25350b8d0)
 migalood version --long | grep commit
 ```
 
