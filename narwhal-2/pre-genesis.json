@@ -1239,6 +1239,27 @@
             "end_time": "1797948000"
           },
           "start_time": "1703253600"
+        },
+        {
+          "@type": "/cosmos.vesting.v1beta1.ContinuousVestingAccount",
+          "base_vesting_account": {
+            "base_account": {
+              "address": "migaloo167k6kvu7rfeju9amdg654uqekhcrxf4pnyaqva",
+              "pub_key": null,
+              "account_number": "0",
+              "sequence": "0"
+            },
+            "original_vesting": [
+              {
+                "denom": "uwhale",
+                "amount": "3000000000000"
+              }
+            ],
+            "delegated_free": [],
+            "delegated_vesting": [],
+            "end_time": "1797948000"
+          },
+          "start_time": "1703253600"
         }
       ]
     },
@@ -1826,6 +1847,15 @@
               "amount": "3000000000000"
             }
           ]
+        },
+        {
+          "address": "migaloo167k6kvu7rfeju9amdg654uqekhcrxf4pnyaqva",
+          "coins": [
+            {
+              "denom": "uwhale",
+              "amount": "3000000000000"
+            }
+          ]
         }
       ],
       "supply": [
@@ -1834,7 +1864,7 @@
           "amount": "478750080000000"
         },
         {
-          "amount": "550134720000000",
+          "amount": "553134720000000",
           "denom": "uwhale"
         }
       ],
