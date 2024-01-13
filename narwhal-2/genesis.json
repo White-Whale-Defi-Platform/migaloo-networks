@@ -237,8 +237,24 @@
       },
       "codes": [],
       "contracts": [],
-      "sequences": [],
-      "gen_msgs": []
+      "sequences": []
+    },
+    "packetfowardmiddleware": {
+      "params": {
+        "fee_percentage": "0.000000000000000000"
+      },
+      "in_flight_packets": {}
+    },
+    "tokenfactory": {
+      "params": {
+        "denom_creation_fee": [
+          {
+            "denom": "stake",
+            "amount": "10000000"
+          }
+        ]
+      },
+      "factory_denoms": []
     }
   }
 }
