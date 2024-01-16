@@ -35,41 +35,22 @@ migalood version --long | grep commit
 migalood init MONIKER --chain-id=narwhal-2
 ```
 
-### Download pre-genesis
+### Replace pre-genesis
 
 ```bash
-curl -s https://raw.githubusercontent.com/White-Whale-Defi-Platform/migaloo-networks/main/narwhal-2/pre-genesis.json > ~/.migalood/config/genesis.json
+curl -s https://raw.githubusercontent.com/notional-labs/migaloo-networks/add-testnet-genesis/narwhal-2/genesis.json > ~/.migalood/config/genesis.json
 ```
 
-## Create gentx
+## Run node
 
-Create wallet
+### Setup seeds
 
 ```bash
-migalood keys add KEY_NAME
+export PERSISTENT_SEEDS="6e8a56df9b9c52a730dd780172fc135a96a9feda@65.109.26.223:26656"
 ```
 
-Fund yourself `20000000uwhale`
+### Run node with persistent peers
 
 ```bash
-migalood add-genesis-account $(migalood keys show KEY_NAME -a) 20000000uwhale
+migalood start --p2p.persistent_peers=$PERSISTENT_SEEDS
 ```
-
-Use half (`10000000uwhale`) for self-delegation
-
-```bash
-migalood gentx KEY_NAME 10000000uwhale --chain-id=narwhal-2
-```
-
-If all goes well, you will see a message similar to the following:
-
-```bash
-Genesis transaction written to "/home/user/.migalood/config/gentx/gentx-******.json"
-```
-
-### Submit genesis transaction
-
-- Fork this repo
-- Copy the generated gentx json file to `migaloo-networks/narwhal-2`
-- Commit and push to your repo
-- Create a PR on this repo
