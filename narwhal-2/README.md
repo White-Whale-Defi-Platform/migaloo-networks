@@ -39,7 +39,19 @@ migalood init notional --chain-id=narwhal-2
 ### Replace pre-genesis
 
 ```bash
+# Download the file
 curl -s https://raw.githubusercontent.com/notional-labs/migaloo-networks/add-testnet-genesis/narwhal-2/genesis.json > ~/.migalood/config/genesis.json
+
+# Calculate the SHA256 checksum
+calculated_checksum=$(shasum -a 256 ~/.migalood/config/genesis.json | awk '{ print $1 }')
+
+# Compare with the expected checksum
+expected_checksum="272eec5c068aa25393273b707ce861f634a570f7a0ee63e904d3e8f5c6632fc9"
+if [ "$calculated_checksum" = "$expected_checksum" ]; then
+    echo "---> Checksum is CORRECT."
+else
+    echo "---> Checksum is INCORRECT."
+fi
 ```
 
 ## Run node
