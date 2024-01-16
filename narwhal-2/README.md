@@ -25,51 +25,45 @@ make install
 # Get node version (should be v3.0.4)
 migalood version
 
-# Get node long version (should be de98de2dd96917ae1ab79161d573fc0b4ee1facf)
+# Get node long version (should be 6e3cc31edaa790176fe94792880f2ec25350b8d0)
 migalood version --long | grep commit
 ```
 
 ### Initialize Chain
 
 ```bash
-migalood init MONIKER --chain-id=narwhal-2
+rm -rf ~/.migalood
+migalood init notional --chain-id=narwhal-2
 ```
 
-### Download pre-genesis
+### Replace pre-genesis
 
 ```bash
-curl -s https://raw.githubusercontent.com/White-Whale-Defi-Platform/migaloo-networks/main/narwhal-2/pre-genesis.json > ~/.migalood/config/genesis.json
+# Download the file
+curl -s https://raw.githubusercontent.com/notional-labs/migaloo-networks/add-testnet-genesis/narwhal-2/genesis.json > ~/.migalood/config/genesis.json
+
+# Calculate the SHA256 checksum
+calculated_checksum=$(shasum -a 256 ~/.migalood/config/genesis.json | awk '{ print $1 }')
+
+# Compare with the expected checksum
+expected_checksum="272eec5c068aa25393273b707ce861f634a570f7a0ee63e904d3e8f5c6632fc9"
+if [ "$calculated_checksum" = "$expected_checksum" ]; then
+    echo "---> Checksum is CORRECT."
+else
+    echo "---> Checksum is INCORRECT."
+fi
 ```
 
-## Create gentx
+## Run node
 
-Create wallet
+### Setup seeds
 
 ```bash
-migalood keys add KEY_NAME
+export PERSISTENT_SEEDS="bfad30f0782fe3e5b978c1b5ffbbc5b4bbaeec04@65.109.34.184:26656"
 ```
 
-Fund yourself `20000000uwhale`
+### Run node with persistent peers
 
 ```bash
-migalood add-genesis-account $(migalood keys show KEY_NAME -a) 20000000uwhale
+migalood start --p2p.persistent_peers=$PERSISTENT_SEEDS
 ```
-
-Use half (`10000000uwhale`) for self-delegation
-
-```bash
-migalood gentx KEY_NAME 10000000uwhale --chain-id=narwhal-2
-```
-
-If all goes well, you will see a message similar to the following:
-
-```bash
-Genesis transaction written to "/home/user/.migalood/config/gentx/gentx-******.json"
-```
-
-### Submit genesis transaction
-
-- Fork this repo
-- Copy the generated gentx json file to `migaloo-networks/narwhal-2`
-- Commit and push to your repo
-- Create a PR on this repo
