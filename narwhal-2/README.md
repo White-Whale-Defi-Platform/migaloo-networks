@@ -40,7 +40,7 @@ migalood init notional --chain-id=narwhal-2
 
 ```bash
 # Download the file
-curl -s https://raw.githubusercontent.com/notional-labs/migaloo-networks/add-testnet-genesis/narwhal-2/genesis.json > ~/.migalood/config/genesis.json
+curl -s https://raw.githubusercontent.com/White-Whale-Defi-Platform/migaloo-networks/main/narwhal-2/genesis.json > ~/.migalood/config/genesis.json
 
 # Calculate the SHA256 checksum
 calculated_checksum=$(shasum -a 256 ~/.migalood/config/genesis.json | awk '{ print $1 }')
