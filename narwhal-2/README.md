@@ -59,7 +59,7 @@ fi
 ### Setup seeds
 
 ```bash
-export PERSISTENT_SEEDS="6e8a56df9b9c52a730dd780172fc135a96a9feda@65.109.26.223:26656"
+export PERSISTENT_SEEDS="bfad30f0782fe3e5b978c1b5ffbbc5b4bbaeec04@65.109.34.184:26656"
 ```
 
 ### Run node with persistent peers
