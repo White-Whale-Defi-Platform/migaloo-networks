@@ -32,7 +32,8 @@ migalood version --long | grep commit
 ### Initialize Chain
 
 ```bash
-migalood init MONIKER --chain-id=narwhal-2
+rm -rf ~/.migalood
+migalood init notional --chain-id=narwhal-2
 ```
 
 ### Replace pre-genesis
